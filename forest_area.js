@@ -12,7 +12,7 @@ const	MAP_HEIGHT	= 36;				//	マップ高さ（タイル数）
 const	MAP_WIDTH	= 36;				//	マップ幅（タイル数）
 const	SMOOTH		= 0;				//	補完処理
 const	START_X		= 8;				//	開始位置x
-const	START_Y		= 15;				//	開始位置y
+const	START_Y		= 10;				//	開始位置y
 const	TILECOLUMN	= 20;				//	タイル列数
 const	TILEROW		= 20;				//	タイル行数
 const	TILESIZE	= 24;				//	タイルサイズ
@@ -154,15 +154,18 @@ function TickField(){
 	gPlayerX += (MAP_WIDTH * TILESIZE);	//x += y;　は x = x + y;と同じ
 	gPlayerX %= (MAP_WIDTH * TILESIZE);
 	gPlayerY += (MAP_HEIGHT * TILESIZE);
-	gPlayerY %= (MAP_HEIGHT * TILESIZE);
+    gPlayerY %= (MAP_HEIGHT * TILESIZE);
 
-	//　現在のタイル座標判定
+    //　現在のタイル座標判定
 	let	mx2 = Math.floor((gPlayerX) / TILESIZE);	//　現在のタイル座標x
 	let	my2 = Math.floor((gPlayerY) / TILESIZE);	//　現在のタイル座標y
-	//　森エリアへ
+	//　メインエリアに戻る
 	if(mx2 == 8 && my2 == 7){
-		location.href = 'forest_area.html' 
-	}
+        location.href = 'index.html';
+    }
+
+    let href = location.href;
+    console.log(href);
 }
 
 function WmPaint()
